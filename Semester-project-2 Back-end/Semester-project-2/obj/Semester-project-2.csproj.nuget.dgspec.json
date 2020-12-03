@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BANGLADESH\\source\\repos\\Semester-project-2\\Semester-project-2\\Semester-project-2.csproj": {}
+    "C:\\Users\\BANGLADESH\\Desktop\\Учеба\\2 курс\\3 семестр\\Инфа, семестровки\\Semester-project-2\\Semester-project-2 Back-end\\Semester-project-2\\Semester-project-2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BANGLADESH\\source\\repos\\Semester-project-2\\Semester-project-2\\Semester-project-2.csproj": {
+    "C:\\Users\\BANGLADESH\\Desktop\\Учеба\\2 курс\\3 семестр\\Инфа, семестровки\\Semester-project-2\\Semester-project-2 Back-end\\Semester-project-2\\Semester-project-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BANGLADESH\\source\\repos\\Semester-project-2\\Semester-project-2\\Semester-project-2.csproj",
+        "projectUniqueName": "C:\\Users\\BANGLADESH\\Desktop\\Учеба\\2 курс\\3 семестр\\Инфа, семестровки\\Semester-project-2\\Semester-project-2 Back-end\\Semester-project-2\\Semester-project-2.csproj",
         "projectName": "Semester-project-2",
-        "projectPath": "C:\\Users\\BANGLADESH\\source\\repos\\Semester-project-2\\Semester-project-2\\Semester-project-2.csproj",
+        "projectPath": "C:\\Users\\BANGLADESH\\Desktop\\Учеба\\2 курс\\3 семестр\\Инфа, семестровки\\Semester-project-2\\Semester-project-2 Back-end\\Semester-project-2\\Semester-project-2.csproj",
         "packagesPath": "C:\\Users\\BANGLADESH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BANGLADESH\\source\\repos\\Semester-project-2\\Semester-project-2\\obj\\",
+        "outputPath": "C:\\Users\\BANGLADESH\\Desktop\\Учеба\\2 курс\\3 семестр\\Инфа, семестровки\\Semester-project-2\\Semester-project-2 Back-end\\Semester-project-2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

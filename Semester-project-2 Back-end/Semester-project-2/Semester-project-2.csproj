@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Index1.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Index1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Pages\htmlpage.html" />
     <None Remove="Pages\htmlpage1.html" />
     <None Remove="Pages\htmlpage2.html" />
