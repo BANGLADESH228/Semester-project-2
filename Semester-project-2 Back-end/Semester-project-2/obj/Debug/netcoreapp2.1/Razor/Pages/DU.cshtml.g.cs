@@ -71,7 +71,7 @@ using Semester_project_2;
             WriteLiteral("     <h2 style=\"font-size: 30px;\">Сервисы Деревни Универсиады</h2>\r\n        <p style=\"text-align: left;\">\r\n            ");
             EndContext();
             BeginContext(1229, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "db24e7782e8f4448a275f795cea427a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a7e19137ade843ca960d706f0abcf7ca", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

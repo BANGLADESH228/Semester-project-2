@@ -43,3 +43,4 @@ C:\Users\cat20\Desktop\gi\Semester-project-2\Semester-project-2 Back-end\Semeste
 C:\Users\cat20\Desktop\gi\Semester-project-2\Semester-project-2 Back-end\Semester-project-2\obj\Debug\netcoreapp2.1\Razor\Pages\ChatDU.cshtml.g.cs
 C:\Users\cat20\Desktop\gi\Semester-project-2\Semester-project-2 Back-end\Semester-project-2\obj\Debug\netcoreapp2.1\Razor\Pages\ChatPushkino.cshtml.g.cs
 C:\Users\cat20\Desktop\gi\Semester-project-2\Semester-project-2 Back-end\Semester-project-2\obj\Debug\netcoreapp2.1\Razor\Pages\Peoples.cshtml.g.cs
+C:\Users\cat20\Desktop\gi\Semester-project-2\Semester-project-2 Back-end\Semester-project-2\obj\Debug\netcoreapp2.1\Razor\Pages\Profile.cshtml.g.cs
