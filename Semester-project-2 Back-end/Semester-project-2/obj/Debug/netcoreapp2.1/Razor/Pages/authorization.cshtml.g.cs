@@ -66,7 +66,7 @@ using Semester_project_2;
             WriteLiteral("\r\n<!doctype html>\r\n<html lang=\"en\" dir=\"ltr\">\r\n");
             EndContext();
             BeginContext(108, 703, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "493ee32703cd4a7392ef94c11f2f2f74", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "235d0c037b5347e796661f449f07d8fe", async() => {
                 BeginContext(114, 588, true);
                 WriteLiteral(@"
     <!-- Required meta tags -->
@@ -84,7 +84,7 @@ using Semester_project_2;
     ");
                 EndContext();
                 BeginContext(702, 68, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "89938632eded4ff88c5b9510b38c23d0", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "27d1f018d3944ff092d8f7ecaf1c0d32", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -119,7 +119,7 @@ using Semester_project_2;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(815, 3328, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4eb218a7348340908389f010fd6c42bc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7869121863c04879b320f4bcff1b2e29", async() => {
                 BeginContext(821, 370, true);
                 WriteLiteral(@"
 
@@ -135,7 +135,7 @@ using Semester_project_2;
                     ");
                 EndContext();
                 BeginContext(1191, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e7d99a2c467d4ed9ba3013cbc4fbcbeb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "38fbcc9867264f81a0bf155413e295fa", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -155,7 +155,7 @@ using Semester_project_2;
                 WriteLiteral("\r\n                    <h4 align=\"middle\" style=\"margin-bottom: 1rem;\">Вход в CampusControl</h4>\r\n                    <div class=\"modal-content\">\r\n                        <div class=\"modal-body\">\r\n                            ");
                 EndContext();
                 BeginContext(1503, 1431, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86c0dbac9696421ab9a21e82aaf7b9dc", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a85c228674fe4b91a9f300e5255aaf81", async() => {
                     BeginContext(1535, 1392, true);
                     WriteLiteral(@"
                                 <div class=""form-group"">
