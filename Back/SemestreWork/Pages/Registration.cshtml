@@ -1,0 +1,126 @@
+﻿@page
+@model SemestreWork.Pages.RegistrationModel
+@{ Layout = null; }
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" conыtent="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="~/img/logo.png" type="image/png">
+    <title>Регистрация</title>
+</head>
+
+<body>
+
+    <!-- main -->
+    <main class="main align-self-center" align="middle"
+          style="padding-top: 0rem; padding-bottom: 0rem; margin-left: 0rem;">
+
+        <div class="container" align="left">
+            <div class="row">
+
+                <div class="col-3"></div>
+
+                <div class="col-6" style="margin-left: 2rem; margin-top: 2rem;">
+                    <img style="padding: 1.5rem; margin-left: 13rem;" src="~/img/logo_big.png" alt="logo">
+                    <h4 align="middle" style="margin-bottom: 1rem;">Регистрация в CampusControl</h4>
+
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <form name="auth" method="POST">
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputNickname">Имя:</label>
+                                        <input asp-for="user.Name" type="text" class="form-control" id="exampleInputName"
+                                               pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,20}$" placeholder="Введите имя..." required>
+                                        <span class="alert-danger" asp-validation-for="user.Name"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputNickname">Фамилия:</label>
+                                        <input asp-for="user.Surname" type="text" class="form-control" id="exampleInputSurname"
+                                               pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,30}$" placeholder="Введите фамилию..." required>
+                                        <span class="alert-danger" asp-validation-for="user.Surname"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputHero">Ваш курс:</label>
+                                        <select asp-for="user.Course" required="" id="exampleInputCource" class="form-control">
+                                            <option selected>1 курс</option>
+                                            <option>2 курс</option>
+                                            <option>3 курс</option>
+                                            <option>4 курс</option>
+                                            <option>1 курс магистратуры</option>
+                                            <option>2 курс магистратуры</option>
+                                            <option>Аспирарантура</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputHero">Ваше общежитие:</label>
+                                        <select asp-for="user.Сommunity" required="" id="exampleInputCommunity" class="form-control">
+                                            <option selected>Деревня Универсиады</option>                              
+                                            <option>ОБЩ СГ</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail1">Почта:</label>
+                                        <input asp-for="user.Email" required="" type="email" class="form-control" id="exampleInputEmail1"
+                                               placeholder="Введите почту...">
+                                        <span class="alert-danger" asp-validation-for="user.Email"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="InputPassword">Пароль:</label>
+                                        <input asp-for="user.Password" required="" type="password" class="form-control"
+                                               pattern="(?=^.{6,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).*" placeholder="Введите пароль..."
+                                               title="Должно содержать по крайней мере одно число, одну
+                                               заглавную и строчную буквы, а также не менее 6 и более символов">
+                                    </div>
+
+                                    <br>
+
+                                    <div class="form-group col-md-12">
+                                        <hr>
+                                        <button style="font-size: 13px;" type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+
+</body>
+</html>
+
