@@ -32,7 +32,7 @@
 
                 <div class="col-3"></div>
 
-                <div class="col-6" style="margin-left: 2rem; margin-top: 2rem;">
+                <div class="col-6" style="margin-top: 2rem;">
                     <img style="padding: 1.5rem; margin-left: 13rem;" src="~/img/logo_big.png" alt="logo">
                     <h4 align="middle" style="margin-bottom: 1rem;">Регистрация в CampusControl</h4>
 
@@ -42,21 +42,21 @@
                                 <div class="form-row">
 
                                     <div class="form-group col-md-6">
-                                        <label for="exampleInputNickname">Имя:</label>
+                                        <label for="exampleInputName">Имя:</label>
                                         <input asp-for="user.Name" type="text" class="form-control" id="exampleInputName"
                                                pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,20}$" placeholder="Введите имя..." required>
                                         <span class="alert-danger" asp-validation-for="user.Name"></span>
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="exampleInputNickname">Фамилия:</label>
+                                        <label for="exampleInputSurname">Фамилия:</label>
                                         <input asp-for="user.Surname" type="text" class="form-control" id="exampleInputSurname"
                                                pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,30}$" placeholder="Введите фамилию..." required>
                                         <span class="alert-danger" asp-validation-for="user.Surname"></span>
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="exampleInputHero">Ваш курс:</label>
+                                        <label for="exampleInputCourse">Ваш курс:</label>
                                         <select asp-for="user.Course" required="" id="exampleInputCource" class="form-control">
                                             <option selected>1 курс</option>
                                             <option>2 курс</option>
@@ -69,8 +69,8 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="exampleInputHero">Ваше общежитие:</label>
-                                        <select asp-for="user.Сommunity" required="" id="exampleInputCommunity" class="form-control">
+                                        <label for="exampleInputCommunity">Ваше общежитие:</label>
+                                        <select asp-for="user.Campus" required="" class="form-control">
                                             <option selected>Деревня Универсиады</option>                              
                                             <option>ОБЩ СГ</option>
                                         </select>

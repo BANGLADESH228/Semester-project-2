@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AZ+rA/Jai1oZm8SlwGq2bqJlhIdbF9MszajVo7NrSxDiHlhAoT0iPBbx4fAA7JbFlWM3/P7v3fOvjoj2uPJNKg==",
+  "dgSpecHash": "EwNG/kw8BlX3BCfY7d13GzaaVXBSZel8Gp/im3vLwSe5g/rbAch3yOgbwyHelqD11B72hbkXR7QinrHSaVD/eA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BANGLADESH\\Desktop\\Dotabuff12-main\\SemestreWork\\SemestreWork\\SemestreWork.csproj",
+  "projectFilePath": "C:\\Users\\BANGLADESH\\Desktop\\Semester-project-2\\Back\\SemestreWork\\SemestreWork.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BANGLADESH\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\BANGLADESH\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

@@ -10,15 +10,6 @@ namespace SemestreWork
 {
     public class Cryptography
     {
-        //public static string HashPassword(string password)
-        //{
-        //    byte[] data = Encoding.ASCII.GetBytes(password);
-        //    byte[] result;
-        //    SHA512 shaM = new SHA512Managed();
-        //    result = shaM.ComputeHash(data);
-        //    return Convert.ToBase64String(result);
-        //}
-
         public static string GetHashString(string password)
         {
             //переводим строку в байт-массим  
@@ -39,11 +30,5 @@ namespace SemestreWork
 
             return hash;
         }
-
-        //public static bool VerifyHashedPassword(string hashedPassword, string password)
-        //{
-        //    return hashedPassword == (password);
-        //}
-
     }
 }

@@ -17,7 +17,7 @@ namespace SemestreWork.Repository
         {
             _configuration = configuration;
         }
-        public int AddUser(RegisterModel user)
+        public int AddUser(RegisterModel user) 
         {
             var connectionString = this.GetConnection();
 
@@ -28,8 +28,8 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "INSERT INTO Users(Name, Surname, Community, Course, Email, Password, Role) VALUES(@Name, @Surname, @Community, @Course, @Email, @Password, @Role);";
-                    count = con.Execute(query, user);
+                    var query = "INSERT INTO Users(Name, Surname, Course, Email, Password, Role, Campus) VALUES(@Name, @Surname, @Course, @Email, @Password, @Role, @Campus);";
+                    count = con.Execute(query, user); 
                 }
                 catch (Exception ex)
                 {
@@ -82,7 +82,7 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "UPDATE Users SET Name=@Name, Surname=@Surname, Community=@Community, Course=@Course, Email=@Email, Password=@Password, Role=@Role, Image=@Image WHERE Id = @Id";
+                    var query = "UPDATE Users SET Name=@Name, Surname=@Surname, Course=@Course, Email=@Email, Password=@Password, Role=@Role, Image=@Image, Campus=@Campus WHERE Id = @Id";
                     count = con.Execute(query, user);
                 }
                 catch (Exception ex)
@@ -186,7 +186,7 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "SELECT * FROM Users WHERE ( Email = '"+email+"' AND Password = '"+password+"');";
+                    var query = "SELECT * FROM Users WHERE ( Email = '" + email+"' AND Password = '"+password+"');";
                     product = con.Query<RegisterModel>(query).FirstOrDefault();
                 }
                 catch

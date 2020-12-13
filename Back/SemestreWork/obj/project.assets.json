@@ -7034,11 +7034,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BANGLADESH\\Desktop\\Dotabuff12-main\\SemestreWork\\SemestreWork\\SemestreWork.csproj",
+      "projectUniqueName": "C:\\Users\\BANGLADESH\\Desktop\\Semester-project-2\\Back\\SemestreWork\\SemestreWork.csproj",
       "projectName": "SemestreWork",
-      "projectPath": "C:\\Users\\BANGLADESH\\Desktop\\Dotabuff12-main\\SemestreWork\\SemestreWork\\SemestreWork.csproj",
+      "projectPath": "C:\\Users\\BANGLADESH\\Desktop\\Semester-project-2\\Back\\SemestreWork\\SemestreWork.csproj",
       "packagesPath": "C:\\Users\\BANGLADESH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BANGLADESH\\Desktop\\Dotabuff12-main\\SemestreWork\\SemestreWork\\obj\\",
+      "outputPath": "C:\\Users\\BANGLADESH\\Desktop\\Semester-project-2\\Back\\SemestreWork\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
