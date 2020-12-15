@@ -25,7 +25,7 @@ namespace SemestreWork.Pages
         
         public IActionResult OnPost()
         {
-            user.Role = "Admin";
+            user.Role = "Default";
 
             user.Password = Cryptography.GetHashString(user.Password);
 
