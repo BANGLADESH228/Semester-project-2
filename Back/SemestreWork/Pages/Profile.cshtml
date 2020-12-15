@@ -4,318 +4,7 @@
 @using SemestreWork.Models;
 @using System.Linq;
 
-<!-- main -->
-<main class="main align-self-center">
-    <div class="container">
-        <div class="row">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="content" class="content content-full-width">
-
-                            <div class="profile">
-                                <div class="profile-header">
-                                    <div class="profile-header-cover"></div>
-                                    <div class="profile-header-content">
-
-                                        <div class="profile-header-img">
-                                            @if (@Model.user.Image == null)
-                                            {
-                                <img src="~/img/noavatar.png"> }
-                                            else
-                                            {
-                                <img src="@Model.user.Image">}
-
-                                            <!-- Ну тут изначально без аватара картинка -->
-                                        </div> <!-- А после редактирования профиля, можно будет загрузить аватар -->
-
-                                        <div class="profile-header-info">
-                                            <h2 class="m-t-10 m-b-5">@Model.user.Name</h2> <!-- Ну тут никнейм (псевдоним) от айдишника -->
-                                            <p class="m-b-10"><b>@Model.user.Name</b>, любимый герой: <b>@Model.user.Name</b></p> <!-- Тут инфа, которую указал юзер при регистрации -->
-                                            @if (HttpContext.Session.Get<string>("AuthReady") == "true")
-                                            {
-                                @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Id == int.Parse(RouteData.Values["id"].ToString()))
-                                {
-                <button type="button" class="btn btn-outline-primary" id="authorization"
-                        data-toggle="modal" data-target="#myModal">
-                    Редактировать профиль
-                </button>}}
-                                            <br />
-                                        </div>
-                                        @if (HttpContext.Session.Get<string>("AuthReady") == "true")
-                                        {
-                            @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Id == int.Parse(RouteData.Values["id"].ToString()))
-                            {
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-                 aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="container">
-                        <div class="col-12">
-                            <div class="modal-content">
-                                <div class="modal-header align-self-center">
-                                    <div class="h4">Редактирование:</div>
-                                </div>
-                                <div class="modal-body">
-                                    <form method="POST">
-                                        <div class="form-group">
-                                            <label for="exampleInputNickname">Псевдоним:</label>
-                                            <input asp-for="user.Name" type="text" class="form-control" id="exampleInputNickname"
-                                                   pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{3,20}$" placeholder="Введите псевдоним..." required>
-                                            <span class="alert-danger" asp-validation-for="user.Name"></span>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputHero">Ваш любимый герой:</label>
-                                            <select asp-for="user.Name" required="" class="form-control"><option>Любые</option><option>Другие</option><option>Abaddon</option><option>Alchemist</option><option>Ancient Apparition</option><option>Anti-Mage</option><option>Arc Warden</option><option>Axe</option><option>Bane</option><option>Batrider</option><option>Beastmaster</option><option>Bloodseeker</option><option>Bounty Hunter</option><option>Brewmaster</option><option>Bristleback</option><option>Broodmother</option><option>Centaur Warrunner</option><option>Chaos Knight</option><option>Chen</option><option>Clinkz</option><option>Clockwerk</option><option>Crystal Maiden</option><option>Dark Seer</option><option>Dark Willow</option><option>Dazzle</option><option>Death Prophet</option><option>Disruptor</option><option>Doom</option><option>Dragon Knight</option><option>Drow Ranger</option><option>Earth Spirit</option><option>Earthshaker</option><option>Elder Titan</option><option>Ember Spirit</option><option>Enchantress</option><option>Enigma</option><option>Faceless Void</option><option>Grimstroke</option><option>Gyrocopter</option><option>Huskar</option><option>Invoker</option><option>Jakiro</option><option>Juggernaut</option><option>Keeper of the Light</option><option>Kunkka</option><option>Legion Commander</option><option>Leshrac</option><option>Lich</option><option>Lifestealer</option><option>Lina</option><option>Lion</option><option>Lone Druid</option><option>Luna</option><option>Lycan</option><option>Magnus</option><option>Mars</option><option>Medusa</option><option>Meepo</option><option>Mirana</option><option>Monkey King</option><option>Morphling</option><option>Naga Siren</option><option>Natures Prophet</option><option>Necrophos</option><option>Night Stalker</option><option>Nyx Assassin</option><option>Ogre Magi</option><option>Omniknight</option><option>Oracle</option><option>Outworld Devourer</option><option>Pangolier</option><option>Phantom Assassin</option><option>Phantom Lancer</option><option>Phoenix</option><option>Puck</option><option>Pudge</option><option>Pugna</option><option>Queen of Pain</option><option>Razor</option><option>Riki</option><option>Rubick</option><option>Sand King</option><option>Shadow Demon</option><option>Shadow Fiend</option><option>Shadow Shaman</option><option>Silencer</option><option>Skywrath Mage</option><option>Slardar</option><option>Slark</option><option>Snapfire</option><option>Sniper</option><option>Spectre</option><option>Spirit Breaker</option><option>Storm Spirit</option><option>Sven</option><option>Techies</option><option>Templar Assassin</option><option>Terrorblade</option><option>Tidehunter</option><option>Timbersaw</option><option>Tinker</option><option>Tiny</option><option>Treant Protector</option><option>Troll Warlord</option><option>Tusk</option><option>Underlord</option><option>Undying</option><option>Ursa</option><option>Vengeful Spirit</option><option>Venomancer</option><option>Viper</option><option>Visage</option><option>Warlock</option><option>Weaver</option><option>Windranger</option><option>Winter Wyvern</option><option>Witch Doctor</option><option>Wraith King</option><option>Zeus</option></select>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="exampleInputHero">Ваш рейтинг:</label>
-                                            <select asp-for="user.Name" required="" id="exampleInputHero" class="form-control">
-                                                <option selected>0-1000 ММР</option>
-                                                <option>1000-2000 ММР</option>
-                                                <option>2000-3000 ММР</option>
-                                                <option>3000-4000 ММР</option>
-                                                <option>4000-5000 ММР</option>
-                                                <option>> 5000 ММР</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="@Model.user.Image">Image:</label>
-                                            <input type="text" asp-for="@Model.user.Image" class="form-control"
-                                                   placeholder="Ссылка на аватарку">
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" asp-page-handler="Edit">Подтвердить</button>
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>}}
-                                    </div>
-                                    @if (HttpContext.Session.Get<string>("AuthReady") == "true")
-                                    {
-                        @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Id == int.Parse(RouteData.Values["id"].ToString()))
-                        {
-        <ul class="profile-header-tab nav nav-tabs" style="background-image: url(/img/v2QsDef.jpeg); background-repeat: no-repeat;background-size: 100% 100%;">
-            <li class="nav-item">
-                <div style="font-size: 18px;"><h2 style="color:white;">Пост:</h2></div>
-
-                <form method="post">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="panel">
-                                    <div class="panel-body">
-
-                                        <div class="col-md-12" style="margin-top:15px;">
-                                            <label asp-for="userPost.Intro" style="font-weight:bold;"></label>
-                                            <textarea style="width:400px;" type='text' class='form-control' asp-for="userPost.Intro" required=""></textarea>
-                                            <span class="alert-danger" asp-validation-for="userPost.Intro"></span>
-                                        </div>
-                                        <div class="col-md-12" style="margin-top:15px;">
-                                            <label asp-for="userPost.Text" style="font-weight:bold;"></label>
-                                            <textarea style="width:400px;" required="" type='text' class='form-control' asp-for="userPost.Text"></textarea>
-                                            <span class="alert-danger" asp-validation-for="userPost.Text"></span>
-                                        </div>
-                                        <div class="col-md-12" style="margin-top:15px;">
-                                            <label asp-for="userPost.Picture" style="font-weight:bold;"></label>
-                                            <input type='text' class='form-control' asp-for="userPost.Picture">
-                                            <span class="alert-danger" asp-validation-for="userPost.Picture"></span>
-                                        </div>
-
-
-                                        <div class="text-center col-md-12" style="margin-top:35px;">
-                                            <button class="btn btn-primary btn-sx" type="submit"><i class="glyphicon glyphicon-plus"></i> Post </button>
-
-                                        </div>
-                                        <br />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </li>
-        </ul>}}
-                                </div>
-                            </div>
-                            <hr>
-
-                            <!-- Profile content -->
-                            <div class="profile-content" style="margin-top: 2rem;">
-                                <div class="tab-content p-0">
-                                    <div class="tab-pane fade active show" id="profile-post">
-
-                                        <ul class="timeline">
-                                            @foreach (UserPosts myPost in Model.userPostsList)
-                                            {
-                                <li>
-                                    <div class="timeline-time">
-                                        <span class="date">@myPost.Time.ToString("M")</span> <!-- Нужна логика для даты -->
-                                        <span class="time">@myPost.Time.ToString("T")</span> <!-- Нужна логика для времени -->
-                                    </div>
-                                    <div class="timeline-icon">
-                                        <a href="javascript:;">&nbsp;</a>
-                                    </div>
-                                    <div class="timeline-body">
-                                        @if (HttpContext.Session.Get<string>("AuthReady") == "true")
-                                        {
-                        @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Id == int.Parse(RouteData.Values["id"].ToString()))
-                        {
-    <form method="post">
-        <button type="submit" asp-page-handler="DeletePost" asp-route-PostId="@myPost.Id" style=" padding: 0;
-                                                                                    padding-left:90%;
-                                                                                    border: none;
-                                                                                    font: inherit;
-                                                                                    color: inherit;
-                                                                                    background-color: transparent;
-                                                                                    color: #C0C0C0;
-                                                                                    font-size: 100%;
-                                                                                                 ">
-            [X]
-        </button>
-    </form>}}
-                                        <div class="timeline-header">
-                                            <span class="userimage">
-                                                @if (@Model.user.Image == null)
-                                                {
-                                <img src="~/img/noavatar.png"> }
-                                                else
-                                                {
-                                <img src="@Model.user.Image">}
-                                            </span>
-                                            <span class="username">
-                                                <a><h5>@myPost.Intro</h5></a> <!-- Ну тут никнейм (псевдоним) от айдишника -->
-                                                <small></small>
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <span class="userimage">
-                                                <img src="@myPost.Picture" width="80%">
-                                            </span>
-                                        </div>
-                                        <div class="timeline-content">
-                                            <p style="font-size: 18px">
-                                                <b>@myPost.Text</b>
-                                            </p>
-                                        </div>
-
-                                        <!-- Количество лайков и комментариев поста -->
-                                        <div class="timeline-likes">
-                                            <div class="stats-right" style="font-size: 15px">
-                                                <span class="stats-text"><h5><b>Комментарии:</b></h5></span>
-                                            </div>
-                                            <div class="stats">
-                                                <span class="fa-stack fa-fw stats-icon">
-                                                    <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                                                    <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
-                                                </span>
-                                                <span class="fa-stack fa-fw stats-icon">
-                                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                                                </span>
-
-                                            </div>
-                                        </div>
-                                        @foreach (var listComments in Model.postsComments.Where(x => x.PostId == myPost.Id))
-                                        {
-
-
-
-
-                        @if (HttpContext.Session.Get<string>("AuthReady") == "true")
-                        {
-    @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Id == int.Parse(RouteData.Values["id"].ToString()))
-    {
-<form method="post">
-    <button type="submit" asp-page-handler="DeleteComment" asp-route-ComId="@listComments.Id" style=" padding: 0;
-                                                                                    padding-left:90%;
-                                                                                    border: none;
-                                                                                    font: inherit;
-                                                                                    color: inherit;
-                                                                                    background-color: transparent;
-                                                                                    color: #C0C0C0;
-                                                                                    font-size: 100%;
-                                                                                                 ">
-        [X]
-    </button>
-</form>}}
-                                            <div style="display: inline-block;">
-
-                                                <div class="timeline-header">
-
-                                                    <a class="nav-link" href="~/Profile/@listComments.CreatorId" style="display: inline-block;">
-                                                        <img src="~/img/noavatar.png" alt="Your avatar" width="30px;30px;" style="display: inline-block;" />
-                                                        <span class="username">@listComments.CreatorName</span>
-                                                    </a>
-                                                </div>
-                                                @listComments.Text
-
-                                            </div>}
-                                        @if (HttpContext.Session.Get<string>("AuthReady") == "true")
-                                        {<!-- Комментарий -->
-                                            <div class="timeline-comment-box">
-                                                <div class="user">
-                                                    @{ var image1 = HttpContext.Session.Get<RegisterModel>("AuthUser").Image;}
-                                                    @if (image1 == null)
-                                                    {
-                                <img src="~/img/noavatar.png"> }
-                                                    else
-                                                    {
-                                <img src="@Model.user.Image">}
-                                                </div>
-                                                <div class="input">
-
-                                                    <form method="post">
-                                                        <div class="input-group">
-                                                            <input type="text" asp-for="comment.Text" class="form-control rounded-corner" placeholder="Напишите что-нибудь...">
-                                                            <span class="alert-danger" asp-validation-for="comment.Text"></span>
-                                                            <input type="text" asp-for="comment.PostId" value="@myPost.Id" hidden>
-                                                            <div class="input-group-btn p-l-10">
-                                                                <button asp-page-handler="SendComment" style="margin-left: 1rem;" class="btn btn-primary f-s-12 rounded-corner" type="submit">
-                                                                    Отправить
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>}
-
-                                    </div>
-                                </li>}
-                                        </ul>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</main>
-
-
-@*----------------------------------------*@
-
-<br>
-<br>
-<br>
-
 <style>
-
 
     #main {
         background-color: #f2f2f2;
@@ -359,7 +48,6 @@
 <div class="container">
     <div id="main">
 
-
         <div class="row" id="real-estates-detail" style="background: #dfcefa; border:0.1px solid #6600ff;  border-radius:10px;">
             <div class="col-lg-4 col-md-4 col-xs-12">
                 <div class="panel panel-default">
@@ -370,8 +58,16 @@
 
                         <div class="text-center" id="author">
                             <br />
+                            @*@if (@Model.user.Image == null)
+                            {
+                                <img src="~/img/noavatar.png">
+                            }
+                            else
+                            {
+                                <img src="@Model.user.Image">
+                            }*@
                             <img width="200px" height="200px" src="https://img1.goodfon.ru/original/2048x1501/8/1e/naruto-ninja-uzumaki-red-eyes.jpg">
-                            <h3>@Model.user.Name @Model.user.Surname</h3>
+                            <h3>user.Name user.Surname</h3>
                             <p>Я бы с удовольствием пригласил тебя зайти и выпить, но боюсь, что ты согласишься.</p>
 
                         </div>
@@ -392,9 +88,9 @@
                                 <h4>Информация о профиле</h4>
                                 <table class="table table-th-block">
                                     <tbody>
-                                        <tr><td class="active">Почта:</td><td>@Model.user.Email</td></tr>
-                                        <tr><td class="active">Общежитие:</td><td>@Model.user.Campus</td></tr>
-                                        <tr><td class="active">Курс:</td><td>@Model.user.Course</td></tr>
+                                        <tr><td class="active">Почта:</td><td>user.Email</td></tr>
+                                        <tr><td class="active">Общежитие:</td><td>user.Campus</td></tr>
+                                        <tr><td class="active">Курс:</td><td>user.Course</td></tr>
                                         <tr><td class="active">Пол:</td><td>Мужской</td></tr>
                                         <tr><td class="active">Полных лет:</td><td>21</td></tr>
                                     </tbody>
@@ -440,8 +136,8 @@
                                     </div>
 
                                     <div class="form-group col-md-10">
-                                        <label asp-for="@Model.user.Image">Аватарка:</label>
-                                        <input type="text" asp-for="@Model.user.Image" class="form-control"
+                                        <label asp-for="user.Image">Аватарка:</label>
+                                        <input type="text" asp-for="user.Image" class="form-control"
                                                placeholder="Ссылка на аватарку">
                                     </div>
 

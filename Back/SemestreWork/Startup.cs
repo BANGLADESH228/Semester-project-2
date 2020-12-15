@@ -38,11 +38,10 @@ namespace SemestreWork
             });
             services.AddSingleton<IConfiguration>(Configuration);
 
-            services.AddTransient<IDuActionsRepository, DuActionsRepository>();
+            services.AddTransient<IDuActions1Repository, DuActions1Repository>();
             services.AddTransient<IPushkinoActionsRepository, PushkinoActionsRepository>();
             services.AddTransient<IMetaRepository, MetaRepository>();
             services.AddTransient<IRegisterRepository,RegisterRepository>();
-            services.AddTransient<IUserPosstRepository, UserPostsRepository>();
             services.AddTransient<ICommentsRepository, CommentsRepository>();
         }
 

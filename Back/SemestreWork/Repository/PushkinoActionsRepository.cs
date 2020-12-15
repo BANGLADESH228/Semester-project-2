@@ -28,7 +28,7 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "INSERT INTO PushkinoActionPosts(Name, Intro, Text, Picture) VALUES(@Name, @Intro, @Text,@Picture);";
+                    var query = "INSERT INTO PushkinoActionsPosts(Name, Intro, Text, Picture) VALUES(@Name, @Intro, @Text,@Picture);";
                     count = con.Execute(query, news);
                 }
                 catch (Exception ex)
@@ -54,7 +54,7 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "DELETE FROM PushkinoActionPosts WHERE Id =" + id;
+                    var query = "DELETE FROM PushkinoActionsPosts WHERE Id =" + id;
                     count = con.Execute(query);
                 }
                 catch (Exception ex)
@@ -80,7 +80,7 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "UPDATE PushkinoActionPosts SET Name = @Name, Intro = @Intro, Text = @Text, Picture = @Picture WHERE Id = @Id";
+                    var query = "UPDATE PushkinoActionsPosts SET Name = @Name, Intro = @Intro, Text = @Text, Picture = @Picture WHERE Id = @Id";
                     count = con.Execute(query, news);
                 }
                 catch (Exception ex)
@@ -106,7 +106,7 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "SELECT * FROM PushkinoActionPosts ORDER BY Id";
+                    var query = "SELECT * FROM PushkinoActionsPosts ORDER BY Id";
                     products = con.Query<PushkinoActionPost>(query).ToList();
                 }
                 catch (Exception ex)
@@ -133,7 +133,7 @@ namespace SemestreWork.Repository
                 {
 
                     con.Open();
-                    var query = "SELECT * FROM PushkinoActionPosts WHERE Id =" + id;
+                    var query = "SELECT * FROM PushkinoActionsPosts WHERE Id =" + id;
                     product = con.Query<PushkinoActionPost>(query).FirstOrDefault();
                 }
                 catch

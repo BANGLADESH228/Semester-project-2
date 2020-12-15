@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SemestreWork.Repository
 {
-    public interface IDuActionsRepository
+    public interface IDuActions1Repository
     {
         int Add(DuActionsPost product);
 

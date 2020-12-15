@@ -11,22 +11,22 @@ namespace SemestreWork.Pages
 {
     public class ChatDUModel : PageModel
     {
-        IUserPosstRepository _userPostsRepository;
+        //IUserPosstRepository _userPostsRepository;
         IRegisterRepository _usersRepository;
         ICommentsRepository _commentsRepository;
-        public ChatDUModel(IRegisterRepository usersRepository, IUserPosstRepository userPostsRepository, ICommentsRepository commentsRepository)
+        public ChatDUModel(IRegisterRepository usersRepository, /*IUserPosstRepository userPostsRepository*/ ICommentsRepository commentsRepository)
         {
             _usersRepository = usersRepository;
-            _userPostsRepository = userPostsRepository;
+            //_userPostsRepository = userPostsRepository;
             _commentsRepository = commentsRepository;
         }
 
         [BindProperty]
         public Comments comment { get; set; }
-        public List<UserPosts> userPostsList { get; set; }
-        [BindProperty]
-        public UserPosts userPost { get; set; }
-        [BindProperty]
+        //public List<UserPosts> userPostsList { get; set; }
+        //[BindProperty]
+        //public UserPosts userPost { get; set; }
+        //[BindProperty]
         public List<Comments> postsComments { get; set; }
 
         [BindProperty]
@@ -34,18 +34,18 @@ namespace SemestreWork.Pages
         public int Id { get; set; }
         public void OnGet(int id)
         {
-            Id = id;
-            user = _usersRepository.GetUser(id);
-            userPostsList = _userPostsRepository.GetList(id);
-            userPostsList.Reverse();
-            foreach (var a in userPostsList)
-            {
-                if (postsComments == null)
-                {
-                    postsComments = new List<Comments>();
-                }
-                postsComments.AddRange(_commentsRepository.GetList(a.Id));
-            }
+            //Id = id;
+            //user = _usersRepository.GetUser(id);
+            //userPostsList = _userPostsRepository.GetList(id);
+            //userPostsList.Reverse();
+            //foreach (var a in userPostsList)
+            //{
+            //    if (postsComments == null)
+            //    {
+            //        postsComments = new List<Comments>();
+            //    }
+            //    postsComments.AddRange(_commentsRepository.GetList(a.Id));
+            //}
         }
 
         public IActionResult OnPostSendComment(int id)

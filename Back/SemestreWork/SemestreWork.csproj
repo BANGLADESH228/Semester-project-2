@@ -11,7 +11,9 @@
     <Compile Remove="Pages\Heroes.cshtml.cs" />
     <Compile Remove="Pages\Privacy.cshtml.cs" />
     <Compile Remove="Repository\INewsRepository.cs" />
+    <Compile Remove="Repository\IUserPosstRepository.cs" />
     <Compile Remove="Repository\NewsRepository.cs" />
+    <Compile Remove="Repository\UserPostsRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

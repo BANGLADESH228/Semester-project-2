@@ -11,11 +11,11 @@ using System.Web;
 
 namespace SemestreWork.Repository
 {
-    public class DuActionsRepository : IDuActionsRepository
+    public class DuActions1Repository : IDuActions1Repository
     {
         IConfiguration _configuration;
 
-        public DuActionsRepository(IConfiguration configuration)
+        public DuActions1Repository(IConfiguration configuration)
         {
             _configuration = configuration;
         }
