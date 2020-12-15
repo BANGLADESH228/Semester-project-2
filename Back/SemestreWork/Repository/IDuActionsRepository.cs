@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace SemestreWork.Repository
 {
-    public interface INewsRepository
+    public interface IDuActionsRepository
     {
-        int Add(NewsPost product);
+        int Add(DuActionsPost product);
 
-        List<NewsPost> GetList();
+        List<DuActionsPost> GetList();
 
-        NewsPost GetNews(int id);
+        DuActionsPost GetNews(int id);
 
-        int EditNews(NewsPost news);
+        int EditNews(DuActionsPost news);
 
         int DeleteNews(int id);
     }
 }
+

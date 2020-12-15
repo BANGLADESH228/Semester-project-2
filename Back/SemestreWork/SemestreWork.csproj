@@ -10,6 +10,8 @@
     <Compile Remove="Pages\Cybersport.cshtml.cs" />
     <Compile Remove="Pages\Heroes.cshtml.cs" />
     <Compile Remove="Pages\Privacy.cshtml.cs" />
+    <Compile Remove="Repository\INewsRepository.cs" />
+    <Compile Remove="Repository\NewsRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -22,7 +22,6 @@ namespace SemestreWork
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
@@ -39,7 +38,8 @@ namespace SemestreWork
             });
             services.AddSingleton<IConfiguration>(Configuration);
 
-            services.AddTransient<INewsRepository, NewsRepository>();
+            services.AddTransient<IDuActionsRepository, DuActionsRepository>();
+            services.AddTransient<IPushkinoActionsRepository, PushkinoActionsRepository>();
             services.AddTransient<IMetaRepository, MetaRepository>();
             services.AddTransient<IRegisterRepository,RegisterRepository>();
             services.AddTransient<IUserPosstRepository, UserPostsRepository>();

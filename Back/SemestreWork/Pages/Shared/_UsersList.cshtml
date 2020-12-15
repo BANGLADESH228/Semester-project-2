@@ -1,21 +1,21 @@
 ﻿@using SemestreWork.Models;
 @model List<RegisterModel>
 
-    @foreach (var MyUser in Model)
+    @foreach (var Users in Model)
     {
     <div class="timeline-header">
         <span class="userimage">
-            @if (@MyUser.Image == null)
+            @if (@Users.Image == null)
             {
                 <img src="~/img/noavatar.png">
             }
             else
             {
-                <img src="@MyUser.Image">
+                <img src="@Users.Image">
             }
         </span>
         <span class="username">
-            <a href="/Profile/@MyUser.Id">@MyUser.Name</a> <!-- Ну тут никнейм (псевдоним) от айдишника -->
+            <a href="/Profile/@Users.Id">@Users.Name</a> <!-- Ну тут никнейм (псевдоним) от айдишника -->
             <small></small>
         </span>
     </div>

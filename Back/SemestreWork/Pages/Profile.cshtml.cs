@@ -49,38 +49,38 @@ namespace SemestreWork.Pages
                 postsComments.AddRange(_commentsRepository.GetList(a.Id));
             }
         }
-        public IActionResult OnPost(int id)
-        {
-            userPost.UserId = id;
-            userPost.Time = DateTime.Now;
-            if (ModelState.IsValid)
-            {
-                var count = _userPostsRepository.Add(userPost);
-                if (count > 0)
-                {
-                    return Redirect("/Profile/" + id);
-                }
-            }
+        //public IActionResult OnPost(int id)
+        //{
+        //    userPost.UserId = id;
+        //    userPost.Time = DateTime.Now;
+        //    if (ModelState.IsValid)
+        //    {
+        //        var count = _userPostsRepository.Add(userPost);
+        //        if (count > 0)
+        //        {
+        //            return Redirect("/Profile/" + id);
+        //        }
+        //    }
 
-            return Page();
-        }
-        public IActionResult OnPostEdit(int id)
-        {
-            var userEdit = _usersRepository.GetUser(id);
-            userEdit.Image = user.Image;
-            userEdit.Name = user.Name + user.Surname;
-            user = userEdit;
-            if (ModelState.IsValid)
-            {
-                var count = _usersRepository.EditUser(userEdit);
-                if (count > 0)
-                {
-                    return Redirect("/Profile/" + id);
-                }
-            }
+        //    return Page();
+        //}
+        //public IActionResult OnPostEdit(int id)
+        //{
+        //    var userEdit = _usersRepository.GetUser(id);
+        //    userEdit.Image = user.Image;
+        //    userEdit.Name = user.Name + user.Surname;
+        //    user = userEdit;
+        //    if (ModelState.IsValid)
+        //    {
+        //        var count = _usersRepository.EditUser(userEdit);
+        //        if (count > 0)
+        //        {
+        //            return Redirect("/Profile/" + id);
+        //        }
+        //    }
 
-            return Redirect("/Profile/" + id);
-        }
+        //    return Redirect("/Profile/" + id);
+        //}
         public IActionResult OnPostSendComment(int id)
         {
             var a = HttpContext.Session.Get<RegisterModel>("AuthUser");

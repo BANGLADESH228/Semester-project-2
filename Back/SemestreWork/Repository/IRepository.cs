@@ -9,13 +9,13 @@ namespace SemestreWork.Repository
 {
     public interface IRepository
     {
-        int Add(NewsPost product);
+        int Add(DuActionsPost product);
 
-        List<NewsPost> GetList();
+        List<DuActionsPost> GetList();
 
-        NewsPost GetNews(int id);
+        DuActionsPost GetNews(int id);
 
-        int EditNews(NewsPost product);
+        int EditNews(DuActionsPost product);
 
         int DeleteNews(int id);
     }

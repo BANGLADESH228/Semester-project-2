@@ -1,8 +1,8 @@
-﻿@page
+﻿@page "{id:int}"
 @model SemestreWork.Pages.ChatDUModel
-@{
-    ViewData["Title"] = "ChatDU";
-}
+@{ ViewData["Title"] = "ChatDU"; }
+@using SemestreWork.Models;
+@using System.Linq;
 
 <div class="container">
 
@@ -85,4 +85,3 @@
         </div>
     </div>
 </div>
-

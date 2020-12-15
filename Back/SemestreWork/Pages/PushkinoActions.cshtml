@@ -1,65 +1,216 @@
-﻿@page
-@model SemestreWork.Pages.PushkinoActionsModel
-@{
-    ViewData["Title"] = "PushkinoActions";
-}
+﻿@page "{id:int}"
+@model SemestreWork.Pages.PushkinoActionModel
+@{ ViewData["Title"] = "PushkinoActions"; }
 
-    <div style="text-align:center;">
-        <div class="container">
-            <div class="row">
-                <div class="col-2"></div>
+<div style="text-align:center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
 
-                <div class="col-8" style="margin-top:30px;">
-                    <h2 align="middle">Предстоящие мероприятия</h2>
-                    <hr>
-                    <div class="card" style="margin-top: 3rem;">
-                        <div class="border_style_outset">  <img src="~/img/sL1e2oyFvBc.jpg" alt="7.27d" width="100%"></div>
+            <div class="col-8" style="margin-top:30px;">
+                <h2 align="middle">Предстоящие мероприятия</h2>
+                <hr>
+                <div class="card" style="margin-top: 3rem;">
+                    <div class="border_style_outset">  <img src="~/img/sL1e2oyFvBc.jpg" alt="7.27d" width="100%"></div>
 
-                        <div class="card-body">
-                            <h4 align="middle">Игра 😎Killer😎</h4>
-                            <p>
-                                Победители получат вкусные призы(3 ПИЦЦЫ😱)
+                    <div class="card-body">
+                        <h4 align="middle">Игра 😎Killer😎</h4>
+                        <p>
+                            Победители получат вкусные призы(3 ПИЦЦЫ😱)
 
-                                Читай правила и записывайся скорее👇🏻
+                            Читай правила и записывайся скорее👇🏻
 
-                                по всем вопросам к Ведущему
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdneSdjPWrFlMx9qucHaQyAG90GltKFHMpw2R_VQJQAWO5D1Q/viewform">
-                                    Запись
-                                </a>
-                            </p>
-                        </div>
+                            по всем вопросам к Ведущему
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdneSdjPWrFlMx9qucHaQyAG90GltKFHMpw2R_VQJQAWO5D1Q/viewform">
+                                Запись
+                            </a>
+                        </p>
                     </div>
-                    <div class="card" style="margin-top: 3rem; margin-bottom: 5rem;">
-                        <div class="border_style_outset">  <img src="https://sun9-66.userapi.com/impf/VaIhC6Onvl2EGkaXuuRHRxrMVf_ProdXucvVVQ/KzCGwJcjuKY.jpg?size=1280x720&quality=96&proxy=1&sign=dae28373b8d6bf4ac9a152260b6d43b7&type=album" alt="7.27d" width="100%"></div>
+                </div>
+                <div class="card" style="margin-top: 3rem; margin-bottom: 5rem;">
+                    <div class="border_style_outset">  <img src="https://sun9-66.userapi.com/impf/VaIhC6Onvl2EGkaXuuRHRxrMVf_ProdXucvVVQ/KzCGwJcjuKY.jpg?size=1280x720&quality=96&proxy=1&sign=dae28373b8d6bf4ac9a152260b6d43b7&type=album" alt="7.27d" width="100%"></div>
 
-                        <div class="card-body">
-                            <h4 align="middle">Тайный Санта в деле 🎅</h4>
-                            <p>
-                                Ты уже знаешь, кто твой подопечный, теперь давай разберёмся, что делать дальше!
+                    <div class="card-body">
+                        <h4 align="middle">Тайный Санта в деле 🎅</h4>
+                        <p>
+                            Ты уже знаешь, кто твой подопечный, теперь давай разберёмся, что делать дальше!
 
-                                Внимательно прочитай на сайте пожелания (если они есть, конечно) и отправляйся за подарками. Постарайся подойти к этому с фантазией, не дари всякую ерунду 🌛
+                            Внимательно прочитай на сайте пожелания (если они есть, конечно) и отправляйся за подарками. Постарайся подойти к этому с фантазией, не дари всякую ерунду 🌛
 
-                                Но и не забывай про сумму подарка: 300 рублей. Больше — можно, меньше — нет 🙅
+                            Но и не забывай про сумму подарка: 300 рублей. Больше — можно, меньше — нет 🙅
 
-                                ⚠ Успей купить, оформить и подарить подарок до 20 декабря, вдруг твой подопечный уезжает домой на праздники 🎄
+                            ⚠ Успей купить, оформить и подарить подарок до 20 декабря, вдруг твой подопечный уезжает домой на праздники 🎄
 
-                                Ты можешь подложить подарок незаметно:
-                                > передать через знакомых
-                                > оставить подарок под дверью
-                                > передать через соседей
-                                > придумать что-то оригинальное!
+                            Ты можешь подложить подарок незаметно:
+                            > передать через знакомых
+                            > оставить подарок под дверью
+                            > передать через соседей
+                            > придумать что-то оригинальное!
 
-                                Но будет здорово, если вручишь лично.
+                            Но будет здорово, если вручишь лично.
 
-                                Кстати! Самый оригинальный Тайный Санта получит ещё один подарок, но уже от нас (об этом мы расскажем чуть позже) 🕯
-                                <br />
-                                
-                            </p>
-                        </div>
+                            Кстати! Самый оригинальный Тайный Санта получит ещё один подарок, но уже от нас (об этом мы расскажем чуть позже) 🕯
+                            <br />
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2"></div>
+        </div>
+    </div>
+</div>
+
+
+
+@*------------------------------------------------------------*@
+
+<!-- main -->
+<main class="main align-self-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+
+            <div class="col-8">
+                <div align="right">
+                    <h2 align="middle">@Model.news.Name</h2>
+                    @using SemestreWork.Models;
+                    @if (HttpContext.Session.Get<string>("AuthReady") == "true")
+                    {
+        @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Role.ToString() == "Admin")
+        {
+<form method="post">
+    <button type="submit" asp-page-handler="Delete" asp-route-id="@Model.news.Id" style=" padding: 0;
+                                    border: none;
+                                    font: inherit;
+                                    color: inherit;
+                                    background-color: transparent;
+                                    color: #C0C0C0;
+                                    font-size: 80%;">
+        DeletePost [X]
+    </button>
+</form>}}
+                </div>
+
+                <hr>
+
+                <div class="card">
+                    <img src="@Model.news.Picture" alt="Dota 2" width="100%">
+                    <div class="card-body">
+                        @{ var str = @Model.HTMLtext; }
+                        @Html.Raw(str)
                     </div>
                 </div>
 
-                <div class="col-2"></div>
+                @if (HttpContext.Session.Get<string>("AuthReady") == "true")
+                {
+    @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Role.ToString() == "Admin")
+    {
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12" style="margin-top:15px;">
+                            <input asp-for="news.Id" type="hidden" />
+                            <label asp-for="news.Name" style="font-weight:bold;"></label>
+                            <input type='text' class='form-control' asp-for="news.Name" />
+                            <span class="alert-danger" asp-validation-for="news.Name"></span>
+                        </div>
+                        <div class="col-md-12" style="margin-top:15px;">
+                            <label asp-for="news.Intro" style="font-weight:bold;"></label>
+                            <textarea style="width:400px;" type='text' class='form-control' asp-for="news.Intro"></textarea>
+                            <span class="alert-danger" asp-validation-for="news.Intro"></span>
+                        </div>
+                        <div class="col-md-12" style="margin-top:15px;">
+                            <label asp-for="news.Text" style="font-weight:bold;"></label>
+                            <textarea style="width:600px; height:150px;" type='text' class='form-control' asp-for="news.Text"></textarea>
+                            <span class="alert-danger" asp-validation-for="news.Text"></span>
+                        </div>
+                        <div class="col-md-12" style="margin-top:15px;">
+                            <label asp-for="news.Picture" style="font-weight:bold;"></label>
+                            <input type='text' class='form-control' asp-for="news.Picture" />
+                            <span class="alert-danger" asp-validation-for="news.Picture"></span>
+                        </div>
+
+                        <div class="text-center col-md-12" style="margin-top:35px;">
+                            <button class="btn btn-primary btn-sx" type="submit"><i class="glyphicon glyphicon-plus"></i> Edit Post</button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</form>}}
+
+                @foreach (var listComments in Model.postsComments)
+                {
+
+    @if (HttpContext.Session.Get<string>("AuthReady") == "true")
+    {
+@if (HttpContext.Session.Get<RegisterModel>("AuthUser").Role == "Admin")
+{
+<form method="post">
+    <button type="submit" asp-page-handler="DeleteComment" asp-route-ComId="@listComments.Id" style=" padding: 0;
+                                                                                                            padding-left:90%;
+                                                                                                            border: none;
+                                                                                                            font: inherit;
+                                                                                                            color: inherit;
+                                                                                                            background-color: transparent;
+                                                                                                            color: #C0C0C0;
+                                                                                                            font-size: 100%;
+                                                                                                                         ">
+        [X]
+    </button>
+</form>}}
+                    <div>
+                        @{ var comUser = Model._registerRepository.GetUser(@listComments.CreatorId); }
+                        <div class="timeline-header">
+
+                            <a class="nav-link" href="~/Profile/@listComments.CreatorId" style="display: inline-block;">
+                                <div class="timeline-header">
+                                    <span class="userimage">
+                                        @if (@comUser.Image == null)
+                                        {
+                        <img src="~/img/noavatar.png" style="display: inline-block;"> }
+                    else
+                    {
+    <img src="@comUser.Image" style="display: inline-block;">}
+                                    </span>
+                                    @listComments.CreatorName
+                                </div>
+                            </a>
+                        </div>
+                        @listComments.Text
+                        <hr />
+                    </div>}
+                <div class="timeline-comment-box" style="margin-top: 2rem;">
+                    <div class="user">
+                        <img src="~/img/noavatar.png" alt="Your avatar" width="5%">
+                    </div>
+                    <div class="input">
+                        <form method="post">
+                            <div class="input-group">
+                                <input type="text" asp-for="comment.Text" class="form-control rounded-corner" placeholder="Напишите что-нибудь...">
+                                <span class="alert-danger" asp-validation-for="comment.Text"></span>
+                                <div class="input-group-btn p-l-10">
+                                    <button asp-page-handler="SendComment" style="margin-left: 1rem;" class="btn btn-primary f-s-12 rounded-corner" type="submit">
+                                        Отправить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-2"></div>
+        </div>
+    </div>
+</main>
+
+

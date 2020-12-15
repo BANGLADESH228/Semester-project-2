@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SemestreWork.Repository
 {
-    public class CommentsRepository:ICommentsRepository
+    public class CommentsRepository : ICommentsRepository
     {
         IConfiguration _configuration;
 
