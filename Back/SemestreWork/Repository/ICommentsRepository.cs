@@ -10,7 +10,7 @@ namespace SemestreWork.Repository
     {
         int Add(Comments product);
 
-        List<Comments> GetList(int PostId);
+        List<Comments> GetList(int id); 
 
         int DeleteComment(int id);
 

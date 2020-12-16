@@ -27,8 +27,8 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "INSERT INTO Comments(Text,CreatorId,PostId,CreatorName) VALUES(@Text,@CreatorId,@PostId,@CreatorName);";
-                    count = con.Execute(query, cyber);
+                    var query = "INSERT INTO Comments(Text,CreatorId,CreatorName) VALUES(@Text,@CreatorId,@CreatorName);";
+                    count = con.Execute(query, cyber); 
                 }
                 catch (Exception ex)
                 {
@@ -69,7 +69,7 @@ namespace SemestreWork.Repository
             }
         }
 
-        public List<Comments> GetList(int PostId)
+        public List<Comments> GetList(int id)
         {
             var connectionString = this.GetConnection();
             List<Comments> products = new List<Comments>();
@@ -79,7 +79,7 @@ namespace SemestreWork.Repository
                 try
                 {
                     con.Open();
-                    var query = "SELECT * FROM Comments WHERE PostId="+PostId+" ORDER BY Id";
+                    var query = "SELECT * FROM Comments Where Id =" + id;
                     products = con.Query<Comments>(query).ToList();
                 }
                 catch (Exception ex)

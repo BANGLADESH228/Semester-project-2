@@ -22,7 +22,7 @@ namespace SemestreWork.Pages
         [BindProperty]
         public Comments comment { get; set; }
 
-        public List<Comments> postsComments{ get; set; }
+        public List<Comments> AllComments{ get; set; }
 
         [BindProperty]
         public RegisterModel user { get; set; }
@@ -32,32 +32,37 @@ namespace SemestreWork.Pages
         {
             Id = id;
             user = _usersRepository.GetUser(id);
-            //userPostsList = _userPostsRepository.GetList(id);
-            //userPostsList.Reverse();
-            //foreach(var a in userPostsList)
-            //{
-            //    if (postsComments == null)
-            //    {
-            //        postsComments = new List<Comments>();
-            //    }
-            //    postsComments.AddRange(_commentsRepository.GetList(a.Id));
-            //}
-        }
-        //public IActionResult OnPost(int id)
-        //{
-        //    userPost.UserId = id;
-        //    userPost.Time = DateTime.Now;
-        //    if (ModelState.IsValid)
-        //    {
-        //        var count = _userPostsRepository.Add(userPost);
-        //        if (count > 0)
-        //        {
-        //            return Redirect("/Profile/" + id);
-        //        }
-        //    }
 
-        //    return Page();
-        //}
+            AllComments = _commentsRepository.GetList(id);
+
+            foreach (var a in AllComments)
+            {
+                if (AllComments == null)
+                {
+                    AllComments = new List<Comments>();
+                }
+                AllComments.AddRange(_commentsRepository.GetList(a.Id));
+            }
+        }
+        
+        public IActionResult StatusCreate(int id)
+        {
+            var userEdit1 = _usersRepository.GetUser(id);
+            userEdit1.Status = user.Status;
+
+            user = userEdit1;
+            if (ModelState.IsValid)
+            {
+                var count = _usersRepository.EditUser(userEdit1);
+                if (count > 0)
+                {
+                    return Redirect("/Profile/" + id);
+                }
+            }
+
+            return Page();
+        }
+
         public IActionResult OnPostEdit(int id)
         {
             var userEdit = _usersRepository.GetUser(id);
@@ -67,6 +72,7 @@ namespace SemestreWork.Pages
             userEdit.Years = user.Years;
             userEdit.Campus = user.Campus;
             userEdit.Course = user.Course;
+            userEdit.Status = user.Status;
 
             user = userEdit;
             if (ModelState.IsValid)
@@ -81,49 +87,21 @@ namespace SemestreWork.Pages
             return Page();
         }
 
-            //    return Redirect("/Profile/" + id);
-            //}
-            //public IActionResult OnPostSendComment(int id)
-            //{
-            //    var a = HttpContext.Session.Get<RegisterModel>("AuthUser");
-            //    comment.CreatorId = a.Id;
-            //    comment.CreatorName = a.Name + a.Surname;
-            //    if (ModelState.IsValid)
-            //    {   
-            //        var count = _commentsRepository.Add(comment);
-            //        if (count > 0)
-            //        {
-            //            return Redirect("/Profile/" + id);
-            //        }
-            //    }
+        public IActionResult OnPostSendComment(int id)
+        {
+            var a = HttpContext.Session.Get<RegisterModel>("AuthUser");
+            comment.CreatorId = a.Id;
+            comment.CreatorName = a.Name + a.Surname;
+            if (ModelState.IsValid)
+            {
+                var count = _commentsRepository.Add(comment);
+                if (count > 0)
+                {
+                    return Redirect("/Profile/" + id);
+                }
+            }
 
-            //    return Redirect("/Profile/" + id);
-            //}
-            //public IActionResult OnPostDeletePost(int id,int PostId)
-            //{
-            //    if (PostId > 0)
-            //    {
-            //        var count = _userPostsRepository.DeletePost(PostId, HttpContext.Session.Get<RegisterModel>("AuthUser").Id);
-            //        if (count > 0)
-            //        {
-            //            return Redirect("/Profile/" + id);
-            //        }
-            //    }
-
-            //    return Redirect("/Profile/" + id);
-            //}
-            //public IActionResult OnPostDeleteComment(int id,int ComId)
-            //{
-            //    if (ComId > 0)
-            //    {
-            //        var count = _commentsRepository.DeleteComment(ComId);
-            //        if (count > 0)
-            //        {
-            //            return Redirect("/Profile/" + id);
-            //        }
-            //    }
-
-            //    return Redirect("/Profile/" + id);
-            //}
+            return Redirect("/Profile/" + id);
         }
+    }
 }

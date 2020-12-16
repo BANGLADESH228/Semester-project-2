@@ -13,8 +13,6 @@ namespace SemestreWork.Models
         [Required]
         public int CreatorId { get; set; }
         [Required]
-        public int PostId { get; set; }
         public string CreatorName { get; set; }
-
     }
 }

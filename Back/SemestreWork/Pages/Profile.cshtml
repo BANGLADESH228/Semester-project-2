@@ -59,15 +59,31 @@
                             <br />
                             @if (@Model.user.Image == null)
                             {
-                                <img width="200px" height="200px" src="~/img/noavatar.png">
+                                <img width="200px" height="200px" src="~/img/noavatar.png"> 
                             }
                             else
                             {
                                 <img width="200px" height="200px" src="@Model.user.Image">
                             }
+
                             @*https://img1.goodfon.ru/original/2048x1501/8/1e/naruto-ninja-uzumaki-red-eyes.jpg*@
+
+                            @*Я бы с удовольствием пригласил тебя зайти и выпить, но боюсь, что ты согласишься.*@
+
                             <h3>@Model.user.Name @Model.user.Surname</h3>
-                            <p>Я бы с удовольствием пригласил тебя зайти и выпить, но боюсь, что ты согласишься.</p>
+
+                            <p>Статус: @Model.user.Status</p>
+
+                            <div>
+                                <form method="POST">
+                                    <textarea style="margin-bottom: 0rem;" class="form-control" type='text'
+                                              asp-for="user.Status" placeholder="Напишите свой статус" rows="5"></textarea>
+
+                                    <div class="text-center col-md-12" style="margin-left: 4rem; padding: 1rem;">
+                                        <button class="btn btn-primary" type="submit">Обновить статус</button>
+                                    </div>
+                                </form>
+                            </div>
 
                         </div>
                     </div>
@@ -192,11 +208,52 @@
                 <div class="panel-heading" style="margin-top:40px;">
                     Комментарии
                 </div>
+
+                @if (HttpContext.Session.Get<string>("AuthReady") == "true")
+                {
+                    <div class="input">
+
+                        <form method="POST">
+                            <div class="input-group">
+                                <textarea type="text" asp-for="comment.Text" class="form-control" placeholder="Оставьте Ваш комментарий" rows="5"></textarea>
+
+                                <span class="alert-danger" asp-validation-for="comment.Text"></span>
+                                <div class="input-group-btn p-l-10">
+                                    <button asp-page-handler="SendComment" style="margin-left: 1rem;" class="btn btn-primary f-s-12 rounded-corner" type="submit">
+                                        Отправитьa
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                }
+              
+                @foreach (var listComments in Model.AllComments)
+                {
+                    <div style="display: inline-block;">
+
+                        <div class="timeline-header">
+
+                            <a class="nav-link" href="~/Profile/@listComments.CreatorId" style="display: inline-block;">
+                                <img src="~/img/noavatar.png" alt="Your avatar" width="30px; 30px;" style="display: inline-block;" />
+                                <span class="username">@listComments.CreatorName</span>
+                            </a>
+
+                        </div>
+                        @listComments.Text
+
+                    </div>
+                }
+
+
+                @*------------------------------Фронт----------------------------------------*@
                 <div class="panel-body comments">
-                    <textarea class="form-control" placeholder="Оставьте Ваш комментарий" rows="5"></textarea>
+                    @*<textarea class="form-control" placeholder="Оставьте Ваш комментарий" rows="5"></textarea>
                     <br>
                     <button type="button" class="btn btn-info pull-right">Отправить</button>
-                    <div class="clearfix"></div>
+                    <div class="clearfix"></div>*@
                     <hr>
                     <ul class="media-list">
                         <li class="media">

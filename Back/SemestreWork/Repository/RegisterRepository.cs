@@ -84,7 +84,7 @@ namespace SemestreWork.Repository
                 {
                     con.Open();
                     var query = "UPDATE Users SET Name=@Name, Surname=@Surname, Course=@Course, " +
-                        "Email=@Email, Password=@Password, Role=@Role, Image=@Image, Campus=@Campus, Years=@Years WHERE Id = @Id";
+                        "Email=@Email, Password=@Password, Role=@Role, Image=@Image, Campus=@Campus, Years=@Years, Status=@Status WHERE Id = @Id";
                     count = con.Execute(query, user);
                 }
                 catch (Exception ex)
