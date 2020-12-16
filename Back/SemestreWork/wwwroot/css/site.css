@@ -114,6 +114,22 @@ label {
     border: medium none;
 }
 
+.btn-danger {
+    background: #5a7ce2;
+    background: -moz-linear-gradient(-45deg, #5a7ce2 0%, #8283e8 50%, #5c5de8 51%, #565bd8 71%, #575cdb 100%);
+    background: -webkit-linear-gradient(-45deg, #5a7ce2 0%,#8283e8 50%,#5c5de8 51%,#565bd8 71%,#575cdb 100%);
+    background: linear-gradient(135deg, #5a7ce2 0%,#8283e8 50%,#5c5de8 51%,#565bd8 71%,#575cdb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a7ce2', endColorstr='#575cdb',GradientType=1 );
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    border: medium none;
+}
+
 .btn-outline-primary:hover {
     background-color: #5a7ce2;
     border-color: #5a7ce2;
@@ -208,17 +224,19 @@ footer {
     font-family: 'Dosis', sans-serif;
     background: #483D8B;
     color: #fff;
-    /* margin-top: 30rem; */
+
 }
 .col {
     border: 3px solid #6D64A2;
     border-radius: 20px;
     text-align: center;
 }
+
 .textMain{
    
     padding:20px;
 }
+
 .mainIndex img {
     margin-top:15px;
     width: 500px;
@@ -226,14 +244,17 @@ footer {
     border: 1px solid #000;
     border-radius: 10px;
 }
+
 .card {
     
 }
+
 .border_style_outset {
     border: 5px outset #565bd9;
     padding: 0px;
     margin-bottom: 0px;
 }
+
 .conversation-wrap {
     box-shadow: -2px 0 3px #ddd;
     padding: 0;
@@ -254,7 +275,6 @@ footer {
 
 .msg {
     padding: 5px;
-    /*border-bottom:1px solid #ddd;*/
     margin: 0;
 }
 
@@ -272,7 +292,6 @@ footer {
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     padding: 10px;
-    /*background: #f8f8f8;*/
 }
 
 .send-message {

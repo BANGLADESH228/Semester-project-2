@@ -11,21 +11,15 @@ namespace SemestreWork.Pages
 {
     public class ProfileModel : PageModel
     {
-        //IUserPosstRepository _userPostsRepository;
         IRegisterRepository _usersRepository;
         ICommentsRepository _commentsRepository;
-        public ProfileModel(IRegisterRepository usersRepository, /*IUserPosstRepository userPostsRepository*/ ICommentsRepository commentsRepository)
+        public ProfileModel(IRegisterRepository usersRepository, ICommentsRepository commentsRepository)
         {
             _usersRepository = usersRepository;
-            //_userPostsRepository = userPostsRepository;
             _commentsRepository = commentsRepository;
         }
 
         [BindProperty]
-        //public List<UserPosts> userPostsList { get; set; }
-        //[BindProperty]
-        //public UserPosts userPost { get; set; }
-        //[BindProperty]
         public Comments comment { get; set; }
 
         public List<Comments> postsComments{ get; set; }

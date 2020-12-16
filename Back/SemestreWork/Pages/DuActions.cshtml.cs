@@ -38,7 +38,7 @@ namespace SemestreWork.Pages
                 var count = _Repository.Add(news);
                 if (count > 0)
                 {
-                    return RedirectToPage("/Home");
+                    return RedirectToPage("/DuActions");
                 }
             }
 
@@ -52,7 +52,7 @@ namespace SemestreWork.Pages
                 var count = _Repository.DeleteNews(id);
                 if (count > 0)
                 {
-                    return RedirectToPage("/Home");
+                    return RedirectToPage("/DuActions");
                 }
             }
 

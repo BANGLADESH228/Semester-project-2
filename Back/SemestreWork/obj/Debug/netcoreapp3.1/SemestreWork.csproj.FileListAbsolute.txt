@@ -856,7 +856,6 @@ C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netco
 C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netcoreapp3.1\Razor\Pages\DuActions.cshtml.g.cs
 C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
 C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netcoreapp3.1\Razor\Pages\Home.cshtml.g.cs
-C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netcoreapp3.1\Razor\Pages\Meta.cshtml.g.cs
 C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netcoreapp3.1\Razor\Pages\Peoples.cshtml.g.cs
 C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.cshtml.g.cs
 C:\Users\BANGLADESH\Desktop\Semester-project-2\Back\SemestreWork\obj\Debug\netcoreapp3.1\Razor\Pages\Pushkino.cshtml.g.cs

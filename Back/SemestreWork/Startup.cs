@@ -40,7 +40,6 @@ namespace SemestreWork
 
             services.AddTransient<IDuActions1Repository, DuActions1Repository>();
             services.AddTransient<IPushkinoActionsRepository, PushkinoActionsRepository>();
-            services.AddTransient<IMetaRepository, MetaRepository>();
             services.AddTransient<IRegisterRepository,RegisterRepository>();
             services.AddTransient<ICommentsRepository, CommentsRepository>();
         }
