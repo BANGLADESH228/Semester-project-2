@@ -25,12 +25,18 @@
                             </p>
                         </div>
 
-                         <form method="post" align="right">
-                            <button type="submit" class="btn btn-danger" asp-page-handler="Delete" 
-                                asp-route-id="@Model.newsList[i].Id" style="margin-bottom: 1rem; margin-right: 1rem;">
-                                Удалить новость [X]
-                            </button>
-                        </form>
+                        @if (HttpContext.Session.Get<string>("AuthReady") == "true")
+                        {
+                            @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Role.ToString() == "Admin")
+                            {
+                                 <form method="post" align="right">
+                                    <button type="submit" class="btn btn-danger" asp-page-handler="Delete" 
+                                        asp-route-id="@Model.newsList[i].Id" style="margin-bottom: 1rem; margin-right: 1rem;">
+                                        Удалить новость [X]
+                                    </button>
+                                </form>
+                            }
+                        }
                     </div>
                     <br />
                     <br />

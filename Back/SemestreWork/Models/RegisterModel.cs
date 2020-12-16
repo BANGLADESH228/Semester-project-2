@@ -17,5 +17,6 @@ namespace SemestreWork.Models
         public string Campus { get; set; }
         public string Image { get; set; }
         public string CookieId { get; set; }
+        public string Years { get; set; }
     }
 }

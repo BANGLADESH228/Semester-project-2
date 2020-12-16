@@ -30,8 +30,8 @@ namespace SemestreWork.Pages
         public int Id { get; set; }
         public void OnGet(int id)
         {
-            //Id = id;
-            //user = _usersRepository.GetUser(id);
+            Id = id;
+            user = _usersRepository.GetUser(id);
             //userPostsList = _userPostsRepository.GetList(id);
             //userPostsList.Reverse();
             //foreach(var a in userPostsList)
@@ -75,22 +75,22 @@ namespace SemestreWork.Pages
 
         //    return Redirect("/Profile/" + id);
         //}
-        public IActionResult OnPostSendComment(int id)
-        {
-            var a = HttpContext.Session.Get<RegisterModel>("AuthUser");
-            comment.CreatorId = a.Id;
-            comment.CreatorName = a.Name + a.Surname;
-            if (ModelState.IsValid)
-            {   
-                var count = _commentsRepository.Add(comment);
-                if (count > 0)
-                {
-                    return Redirect("/Profile/" + id);
-                }
-            }
+        //public IActionResult OnPostSendComment(int id)
+        //{
+        //    var a = HttpContext.Session.Get<RegisterModel>("AuthUser");
+        //    comment.CreatorId = a.Id;
+        //    comment.CreatorName = a.Name + a.Surname;
+        //    if (ModelState.IsValid)
+        //    {   
+        //        var count = _commentsRepository.Add(comment);
+        //        if (count > 0)
+        //        {
+        //            return Redirect("/Profile/" + id);
+        //        }
+        //    }
 
-            return Redirect("/Profile/" + id);
-        }
+        //    return Redirect("/Profile/" + id);
+        //}
         //public IActionResult OnPostDeletePost(int id,int PostId)
         //{
         //    if (PostId > 0)

@@ -5,7 +5,6 @@
 @using System.Linq;
 
 <style>
-
     #main {
         background-color: #f2f2f2;
         padding: 20px;
@@ -58,16 +57,16 @@
 
                         <div class="text-center" id="author">
                             <br />
-                            @*@if (@Model.user.Image == null)
+                            @if (@Model.user.Image == null)
                             {
-                                <img src="~/img/noavatar.png">
+                                <img width="200px" height="200px" src="~/img/noavatar.png">
                             }
                             else
                             {
-                                <img src="@Model.user.Image">
-                            }*@
-                            <img width="200px" height="200px" src="https://img1.goodfon.ru/original/2048x1501/8/1e/naruto-ninja-uzumaki-red-eyes.jpg">
-                            <h3>user.Name user.Surname</h3>
+                                <img width="200px" height="200px" src="@Model.user.Image">
+                            }
+                            @*https://img1.goodfon.ru/original/2048x1501/8/1e/naruto-ninja-uzumaki-red-eyes.jpg*@
+                            <h3>@Model.user.Name @Model.user.Surname</h3>
                             <p>Я бы с удовольствием пригласил тебя зайти и выпить, но боюсь, что ты согласишься.</p>
 
                         </div>
@@ -88,64 +87,77 @@
                                 <h4>Информация о профиле</h4>
                                 <table class="table table-th-block">
                                     <tbody>
-                                        <tr><td class="active">Почта:</td><td>user.Email</td></tr>
-                                        <tr><td class="active">Общежитие:</td><td>user.Campus</td></tr>
-                                        <tr><td class="active">Курс:</td><td>user.Course</td></tr>
-                                        <tr><td class="active">Пол:</td><td>Мужской</td></tr>
-                                        <tr><td class="active">Полных лет:</td><td>21</td></tr>
+                                        <tr><td class="active">Почта:</td><td>@Model.user.Email</td></tr>
+                                        <tr><td class="active">Общежитие:</td><td>@Model.user.Campus</td></tr>
+                                        <tr><td class="active">Курс:</td><td>@Model.user.Course</td></tr>
+                                        <tr><td class="active">Возраст:</td><td>@Model.user.Years</td></tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="tab-pane fade" id="contact">
-                                <p></p>
-                                <form method="post">
-                                    
-                                    <div class="form-group col-md-10">
-                                        <label for="exampleInputName">Имя:</label>
-                                        <input asp-for="user.Name" type="text" class="form-control" id="exampleInputName"
-                                               pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,20}$" placeholder="Введите имя..." required>
-                                        <span class="alert-danger" asp-validation-for="user.Name"></span>
-                                    </div>
 
-                                    <div class="form-group col-md-10">
-                                        <label for="exampleInputSurname">Фамилия:</label>
-                                        <input asp-for="user.Surname" type="text" class="form-control" id="exampleInputSurname"
-                                               pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,30}$" placeholder="Введите фамилию..." required>
-                                        <span class="alert-danger" asp-validation-for="user.Surname"></span>
-                                    </div>
+                            @*@if (HttpContext.Session.Get<string>("AuthReady") == "true")
+                            {
+                                @if (HttpContext.Session.Get<RegisterModel>("AuthUser").Id == int.Parse(RouteData.Values["id"].ToString()))
+                                {*@
+                                    <div class="tab-pane fade" id="contact">
+                                        <p></p>
+                                        <form method="post">
 
-                                    <div class="form-group col-md-10">
-                                        <label for="exampleInputCourse">Ваш курс:</label>
-                                        <select asp-for="user.Course" required="" id="exampleInputCource" class="form-control">
-                                            <option selected>1 курс</option>
-                                            <option>2 курс</option>
-                                            <option>3 курс</option>
-                                            <option>4 курс</option>
-                                            <option>1 курс магистратуры</option>
-                                            <option>2 курс магистратуры</option>
-                                            <option>Аспирарантура</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group col-md-10">
+                                                <label for="exampleInputName">Имя:</label>
+                                                <input asp-for="user.Name" type="text" class="form-control" id="exampleInputName"
+                                                       pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,20}$" placeholder="Введите имя..." required>
+                                                <span class="alert-danger" asp-validation-for="user.Name"></span>
+                                            </div>
 
-                                    <div class="form-group col-md-10">
-                                        <label for="exampleInputCommunity">Ваше общежитие:</label>
-                                        <select asp-for="user.Campus" required="" class="form-control">
-                                            <option selected>Деревня Универсиады</option>
-                                            <option>ОБЩ СГ</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group col-md-10">
+                                                <label for="exampleInputSurname">Фамилия:</label>
+                                                <input asp-for="user.Surname" type="text" class="form-control" id="exampleInputSurname"
+                                                       pattern="^(?!.*\.\.)(?!\.)(?!.*\.$)(?!\d+$)[a-zA-Z0-9.]{2,30}$" placeholder="Введите фамилию..." required>
+                                                <span class="alert-danger" asp-validation-for="user.Surname"></span>
+                                            </div>
 
-                                    <div class="form-group col-md-10">
-                                        <label asp-for="user.Image">Аватарка:</label>
-                                        <input type="text" asp-for="user.Image" class="form-control"
-                                               placeholder="Ссылка на аватарку">
-                                    </div>
+                                            <div class="form-group col-md-10">
+                                                <label for="exampleInputCourse">Ваш курс:</label>
+                                                <select asp-for="user.Course" required="" id="exampleInputCource" class="form-control">
+                                                    <option selected>1 курс</option>
+                                                    <option>2 курс</option>
+                                                    <option>3 курс</option>
+                                                    <option>4 курс</option>
+                                                    <option>1 курс магистратуры</option>
+                                                    <option>2 курс магистратуры</option>
+                                                    <option>Аспирарантура</option>
+                                                </select>
+                                            </div>
 
-                                    <div class="form-group col-md-10">
-                                        <button type="submit" class="btn btn-primary" data-original-title="" title="">Сохранить</button>
+                                            <div class="form-group col-md-10">
+                                                <label for="exampleInputCommunity">Ваше общежитие:</label>
+                                                <select asp-for="user.Campus" required="" class="form-control">
+                                                    <option selected>Деревня Универсиады</option>
+                                                    <option>ОБЩ СГ</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label for="exampleInputYears">Возраст:</label>
+                                                <input asp-for="user.Years" type="text" class="form-control" id="exampleInputYears"
+                                                       pattern="(?=^.{2,}$)(?=.*[0-9]).*" placeholder="Введите ваш возраст..." required>
+                                                <span class="alert-danger" asp-validation-for="user.Years"></span>
+                                            </div>
+
+                                            <div class="form-group col-md-10">
+                                                <label asp-for="user.Image">Аватарка:</label>
+                                                <input type="text" asp-for="user.Image" class="form-control"
+                                                       placeholder="Ссылка на аватарку">
+                                            </div>
+
+                                            <div class="form-group col-md-10">
+                                                <button type="submit" class="btn btn-primary" data-original-title="" title="">Сохранить</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
-                            </div>
+                                @*}
+                            }*@
                         </div>
                     </div>
                 </div>

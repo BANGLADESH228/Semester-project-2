@@ -32,7 +32,7 @@
 
                 <div class="col-3"></div>
 
-                <div class="col-6" style="margin-top: 2rem;">
+                <div class="col-6" style="margin-top: 0rem;">
                     <img style="padding: 1.5rem; margin-left: 13rem;" src="~/img/logo_big.png" alt="logo">
                     <h4 align="middle" style="margin-bottom: 1rem;">Регистрация в CampusControl</h4>
 
@@ -71,9 +71,16 @@
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputCommunity">Ваше общежитие:</label>
                                         <select asp-for="user.Campus" required="" class="form-control">
-                                            <option selected>Деревня Универсиады</option>                              
+                                            <option selected>Деревня Универсиады</option>
                                             <option>ОБЩ СГ</option>
                                         </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputYears">Возраст:</label>
+                                        <input asp-for="user.Years" type="text" class="form-control" id="exampleInputYears"
+                                               pattern="(?=^.{2,}$)(?=.*[0-9]).*" placeholder="Введите ваш возраст..." required>
+                                        <span class="alert-danger" asp-validation-for="user.Years"></span>
                                     </div>
 
                                     <div class="form-group col-md-6">

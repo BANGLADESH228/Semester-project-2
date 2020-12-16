@@ -55,7 +55,7 @@ namespace SemestreWork.Pages
                     HttpContext.Response.Cookies.Append("CookieId", AuthUser.CookieId);
                 }
                
-                return Redirect("/Home/"+AuthUser.Id.ToString());
+                return Redirect("/Profile/"+AuthUser.Id.ToString());
             }
                 
         }

@@ -35,7 +35,7 @@ namespace SemestreWork.Pages
 
                 if (count > 0)
                 {
-                    return RedirectToPage("/About");
+                    return RedirectToPage("/Authorization");
                 }
             }
 
